@@ -31,7 +31,7 @@ public class DeviceSaxHandler extends DefaultHandler {
     }
 
     public void endElement(String uri, String localName, String qName) {
-        DeviceTagName tagName = DeviceTagName.valueOf(qName.toUpperCase().replace("-","_"));
+        DeviceTagName tagName = DeviceTagName.valueOf(qName.toUpperCase().replace(":","_"));
         switch (tagName) {
             case NAME:
                 device.setName(text.toString());
@@ -40,7 +40,7 @@ public class DeviceSaxHandler extends DefaultHandler {
                 device.setType(text.toString());
                 break;
             case PRICE:
-                device.setPrice(Integer.parseInt(text.toString()));
+                device.setPrice(Double.parseDouble(text.toString()));
                 break;
             case ORIGIN:
                 device.setOrigin(text.toString());

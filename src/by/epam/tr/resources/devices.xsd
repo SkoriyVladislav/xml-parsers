@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.epam.tc.com/device"
+        xmlns:tns="http://www.epam.tc.com/device">
+
+
+    <element name="devices">
+        <complexType>
+            <sequence>
+                <element name="device" type="tns:device"
+                         minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="device">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="price" type="double"/>
+            <element name="origin" type="string"/>
+            <element name="type" type="string"/>
+            <element name="critical" type="boolean"/>
+        </sequence>
+        <attribute name="id" type="int" use="required"/>
+    </complexType>
+</schema>

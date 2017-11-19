@@ -3,7 +3,7 @@ package by.epam.tr.device;
 public class Device {
     private int Id;
     private String Name;
-    private int Price;
+    private double Price;
     private String Origin;
     private String Type;
     private Boolean Critical;
@@ -25,9 +25,12 @@ public class Device {
 
     @Override
     public int hashCode() {
-        int result = Id;
+        int result;
+        long temp;
+        result = Id;
         result = 31 * result + (Name != null ? Name.hashCode() : 0);
-        result = 31 * result + Price;
+        temp = Double.doubleToLongBits(Price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (Origin != null ? Origin.hashCode() : 0);
         result = 31 * result + (Type != null ? Type.hashCode() : 0);
         result = 31 * result + (Critical != null ? Critical.hashCode() : 0);
@@ -50,11 +53,11 @@ public class Device {
         Name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return Price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         Price = price;
     }
 
@@ -80,5 +83,17 @@ public class Device {
 
     public void setCritical(Boolean critical) {
         Critical = critical;
+    }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", Price=" + Price +
+                ", Origin='" + Origin + '\'' +
+                ", Type='" + Type + '\'' +
+                ", Critical=" + Critical +
+                '}';
     }
 }
