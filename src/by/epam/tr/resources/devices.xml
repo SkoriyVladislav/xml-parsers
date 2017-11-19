@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tc:devices xmlns:tc="http://www.epam.tc.com/device"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.epam.tc.com/device devices.xsd">
+    <device id="1">
+        <name>Hard disk</name>
+        <price>49.99</price>
+        <origin>USA</origin>
+        <type>zaebis</type>
+        <critical>false</critical>
+    </device>
+
+    <device id="2">
+        <name>Hard disk</name>
+        <price>39.99</price>
+        <origin>USA</origin>
+        <type>not zaebis</type>
+        <critical>false</critical>
+    </device>
+</tc:devices>
