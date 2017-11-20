@@ -1,6 +1,7 @@
 package by.epam.tr.dal.sax;
 
 import by.epam.tr.device.Device;
+import by.epam.tr.resources.DeviceTagName;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;

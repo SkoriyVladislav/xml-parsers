@@ -15,7 +15,7 @@ public class SAX {
         DeviceSaxHandler handler = new DeviceSaxHandler();
         reader.setContentHandler(handler);
         reader.setErrorHandler(handler);
-        reader.parse(new InputSource("src/by/epam/tr/resources/devices.xml"));
+        reader.parse(new InputSource(link));
 
         return handler.getDeviceList();
     }

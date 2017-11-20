@@ -17,7 +17,7 @@ public class Controller extends HttpServlet {
         String surname = request.getParameter("surname");
 
         /*ServiceFactory factory = ServiceFactory.getInstance();
-        UserListService service = factory.getUserService();
+        DeviceListService service = factory.getUserService();
         List<User> users = service.createListUser(name, surname);
 
         request.setAttribute("users", users);*/
