@@ -7,9 +7,10 @@ public final class DAOFactory {
 
     private final DeviceDAO entityDAO = new DeviceDAOImpl();
 
-    private DAOFactory() {}
+    private DAOFactory() {
+    }
 
-    public DeviceDAO getUserDAO() {
+    public DeviceDAO getDeviceDAO() {
         return entityDAO;
     }
 

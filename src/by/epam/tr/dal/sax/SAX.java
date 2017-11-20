@@ -10,13 +10,20 @@ import java.io.IOException;
 import java.util.List;
 
 public class SAX {
-    public static List<Device> parse(String link) throws SAXException, IOException {
-        XMLReader reader = XMLReaderFactory.createXMLReader();
-        DeviceSaxHandler handler = new DeviceSaxHandler();
-        reader.setContentHandler(handler);
-        reader.setErrorHandler(handler);
-        reader.parse(new InputSource(link));
+    public static List<Device> parse(String link){
+        try {
+            XMLReader reader = XMLReaderFactory.createXMLReader();
+            DeviceSaxHandler handler = new DeviceSaxHandler();
+            reader.setContentHandler(handler);
+            reader.setErrorHandler(handler);
+            reader.parse(new InputSource(link));
+            return handler.getDeviceList();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (SAXException ex) {
+            ex.printStackTrace();
+        }
 
-        return handler.getDeviceList();
+        return null;
     }
 }

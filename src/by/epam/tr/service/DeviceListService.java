@@ -1,9 +1,9 @@
 package by.epam.tr.service;
 
-import by.epam.tr.device.Device;
-
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public interface DeviceListService {
-    List<Device> createListUser(String url, String type);
+    void createListUser(HttpServletRequest request, HttpServletResponse response, String url, String type) throws IOException;
 }

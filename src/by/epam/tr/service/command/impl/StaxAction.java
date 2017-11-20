@@ -1,5 +1,7 @@
 package by.epam.tr.service.command.impl;
 
+import by.epam.tr.dal.dao.DAOFactory;
+import by.epam.tr.dal.dao.DeviceDAO;
 import by.epam.tr.service.command.Action;
 
 import javax.servlet.ServletException;
@@ -11,9 +13,10 @@ public class StaxAction implements Action {
 
 
     @Override
-    public void executeAction(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        BookService service=new BookServiceImpl();
-        req.setAttribute("books", service.parseStax());
+    public void executeAction(HttpServletRequest req, HttpServletResponse resp, String url, String type) throws IOException {
+        DAOFactory factory = DAOFactory.getInstance();
+        DeviceDAO deviceDAO = factory.getDeviceDAO();
+        req.setAttribute("devices", deviceDAO.createListUser(url, type));
         try {
             req.getRequestDispatcher("/staxPage.jsp").forward(req, resp);
         } catch (ServletException e) {

@@ -5,7 +5,6 @@ import by.epam.tr.dal.sax.SAX;
 import by.epam.tr.dal.stax.StAX;
 import by.epam.tr.device.Device;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 

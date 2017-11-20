@@ -15,7 +15,7 @@ public class DeviceSaxHandler extends DefaultHandler {
     private Device device = null;
     private StringBuilder text;
 
-    public List<Device> getDeviceList() {
+    List<Device> getDeviceList() {
         return list;
     }
 

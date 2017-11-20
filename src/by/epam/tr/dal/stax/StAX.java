@@ -27,7 +27,6 @@ public class StAX {
             ex.printStackTrace();
         } catch (XMLStreamException ex) {
             ex.printStackTrace();
-            System.exit(0);
         }
 
         return devices;
@@ -39,51 +38,49 @@ public class StAX {
         String elementName = null;
 
         while (reader.hasNext()) {
-            int type = reader.next();
-            switch (type) {
+            int event = reader.next();
+
+            switch (event) {
                 case XMLStreamConstants.START_ELEMENT:
-                    elementName = reader.getLocalName();
-                    switch (elementName) {
-                        case "DEVICE":
-                            device = new Device();
-                            Integer id = Integer.parseInt(reader.getAttributeValue(null,"id"));
-                            device.setId(id);
-                            break;
+                    if ("device".equals(reader.getLocalName())) {
+                        device = new Device();
+                        device.setId(Integer.parseInt(reader.getAttributeValue(0)));
+                    }
+                    if ("devices".equals(reader.getLocalName())) {
+                        devices = new ArrayList<>();
                     }
                     break;
 
                 case XMLStreamConstants.CHARACTERS:
-                    String text = reader.getText().trim();
-                    if(text.isEmpty()) {
-                        break;
-                    }
+                    elementName = reader.getText().trim();
+                    break;
 
-                    switch (elementName) {
-                        case "NAME":
-                            device.setName(text);
+                case XMLStreamConstants.END_ELEMENT:
+                    switch (reader.getLocalName()) {
+                        case "device":
+                            devices.add(device);
                             break;
-                        case "TYPE":
-                            device.setType(text);
+                        case "name":
+                            device.setName(elementName);
                             break;
-                        case "PRICE":
-                            device.setPrice(Double.parseDouble(text));
+                        case "price":
+                            device.setPrice(Double.parseDouble(elementName));
                             break;
-                        case "ORIGIN":
-                            device.setOrigin(text);
+                        case "origin":
+                            device.setOrigin(elementName);
                             break;
-                        case "CRITICAL":
-                            device.setCritical(Boolean.getBoolean(text));
+                        case "type":
+                            device.setType(elementName);
+                            break;
+                        case "critical":
+                            device.setCritical(Boolean.getBoolean(elementName));
                             break;
                     }
                     break;
 
-                case XMLStreamConstants.END_ELEMENT:
-                    elementName = reader.getLocalName();
-                    switch (elementName) {
-                        case "DEVICE":
-                            devices.add(device);
-                            break;
-                    }
+                case XMLStreamConstants.START_DOCUMENT:
+                    devices = new ArrayList<>();
+                    break;
             }
         }
         return devices;
