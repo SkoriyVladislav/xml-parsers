@@ -8,9 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Parse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   </head>
+
   <body>
-  $END$
+
+  <br/>
+  <form action="Controller" method="get" >
+    <input type="hidden" name="command" value="SAX" />
+    <input type="submit" value="SAX" /><br />
+
+    <input type="hidden" name="command" value="StAX" />
+    <input type="submit" value="StAX" /><br />
+
+    <input type="hidden" name="command" value="DOM" />
+    <input type="submit" value="DOM" /><br />
+  </form>
+
   </body>
 </html>

@@ -1,4 +1,4 @@
-package by.epam.tr.dal.sax;
+package by.epam.tr.service.sax;
 
 import by.epam.tr.device.Device;
 import by.epam.tr.resources.DeviceTagName;

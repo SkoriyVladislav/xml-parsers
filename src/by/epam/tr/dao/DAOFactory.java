@@ -1,6 +1,6 @@
-package by.epam.tr.dal.dao;
+package by.epam.tr.dao;
 
-import by.epam.tr.dal.dao.impl.DeviceDAOImpl;
+import by.epam.tr.dao.impl.DeviceDAOImpl;
 
 public final class DAOFactory {
     private static final DAOFactory instance = new DAOFactory();

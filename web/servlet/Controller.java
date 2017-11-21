@@ -1,28 +1,23 @@
 package servlet;
 
+import by.epam.tr.service.ServiceFactory;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Controller extends HttpServlet {
 
+@WebServlet("/Controller")
+public class Controller extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-
-        /*ServiceFactory factory = ServiceFactory.getInstance();
-        DeviceListService service = factory.getUserService();
-        List<User> users = service.createListUser(name, surname);
-
-        request.setAttribute("users", users);*/
-
-        request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);
+        String url = "devices.xml";
+        ServiceFactory.getInstance().getUserService().createListUser(request, response, url, request.getParameter("command"));
     }
 
     @Override

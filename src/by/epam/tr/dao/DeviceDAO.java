@@ -1,4 +1,4 @@
-package by.epam.tr.dal.dao;
+package by.epam.tr.dao;
 
 import by.epam.tr.device.Device;
 import java.util.List;

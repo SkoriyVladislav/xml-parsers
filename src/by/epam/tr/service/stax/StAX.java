@@ -1,12 +1,12 @@
-package by.epam.tr.dal.stax;
+package by.epam.tr.service.stax;
 
-import by.epam.tr.resources.DeviceTagName;
 import by.epam.tr.device.Device;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StAX {
-    public static List<Device> parse(String url) {
+    public static List<Device> parse(File file) {
         List<Device> devices = null;
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
         try {
-            InputStream input = new FileInputStream(url);
+            InputStream input = new FileInputStream(file);
 
             XMLStreamReader reader = inputFactory.createXMLStreamReader(input);
             devices = process(reader);

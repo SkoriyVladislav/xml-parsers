@@ -1,7 +1,7 @@
 package by.epam.tr.service.command.impl;
 
-import by.epam.tr.dal.dao.DAOFactory;
-import by.epam.tr.dal.dao.DeviceDAO;
+import by.epam.tr.dao.DAOFactory;
+import by.epam.tr.dao.DeviceDAO;
 import by.epam.tr.service.command.Action;
 
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ public class StaxAction implements Action {
         DeviceDAO deviceDAO = factory.getDeviceDAO();
         req.setAttribute("devices", deviceDAO.createListUser(url, type));
         try {
-            req.getRequestDispatcher("/staxPage.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(req, resp);
         } catch (ServletException e) {
             e.printStackTrace();
         }
