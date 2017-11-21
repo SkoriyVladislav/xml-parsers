@@ -1,4 +1,4 @@
-package by.epam.tr.service.parser.sax;
+package by.epam.tr.dal.parser.sax;
 
 import by.epam.tr.device.Device;
 import by.epam.tr.resources.DeviceTagName;
@@ -16,6 +16,8 @@ public class DeviceSaxHandler extends DefaultHandler {
     private StringBuilder text;
 
     List<Device> getDeviceList() {
+
+        list.get(0).setType("SAX");
         return list;
     }
 

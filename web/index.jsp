@@ -15,16 +15,20 @@
   <body>
 
   <br/>
-  <form action="Controller" method="get" >
-    <input type="hidden" name="command" value="SAX" />
-    <input type="submit" value="SAX" /><br />
+      <form action="Controller" method="get">
+            <input type="hidden" name="command" value="SAX" />
+            <input type="submit" value="SAX" />
+      </form>
 
-    <input type="hidden" name="command" value="StAX" />
-    <input type="submit" value="StAX" /><br />
+      <form action="Controller" method="get">
+            <input type="hidden" name="command" value="StAX" />
+            <input type="submit" value="StAX" />
+      </form>
 
-    <input type="hidden" name="command" value="DOM" />
-    <input type="submit" value="DOM" /><br />
-  </form>
+      <form action="Controller" method="get">
+            <input type="hidden" name="command" value="DOM" />
+            <input type="submit" value="DOM" />
+      </form>
 
   </body>
 </html>

@@ -13,27 +13,26 @@
     <title>Title</title>
 </head>
     <body>
-    <table
-            style="border-style: solid; border-width: 1px; width: 250px; border-collapse: collapse;">
-        <thead>
-        <tr>
-            <td style="width: 50px;">name</td>
-            <td style="width: 50px;">origin</td>
-            <td style="width: 50px;">price</td>
-            <td style="width: 50px;">type</td>
-            <td style="width: 50px;">critical</td>
+        <table width="60%" border="1" align="center">
 
-        </tr>
-        </thead>
-        <c:forEach items="${devices}" var="device">
             <tr>
-                <td>${device.name}</td>
-                <td>${device.origin}</td>
-                <td>${device.price}</td>
-                <td>${device.type}</td>
-                <td>${device.critical}</td>
+                <td >Name</td>
+                <td >Origin</td>
+                <td >Price</td>
+                <td >Type</td>
+                <td >Critical</td>
+
             </tr>
-        </c:forEach>
-    </table>
+
+            <c:forEach items="${devices}" var="device">
+                <tr>
+                    <td>${device.name}</td>
+                    <td>${device.origin}</td>
+                    <td>${device.price}</td>
+                    <td>${device.type}</td>
+                    <td>${device.critical}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>

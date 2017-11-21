@@ -1,7 +1,6 @@
-package by.epam.tr.service.parser.dom;
+package by.epam.tr.dal.parser.dom;
 
 import by.epam.tr.device.Device;
-import jdk.internal.org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,10 +21,10 @@ public class DOM {
         try {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file);
-            NodeList bookNodes = doc.getElementsByTagName("book");
+            NodeList deviceNodes = doc.getElementsByTagName("device");
             list = new ArrayList<>();
-            for (int i = 0; i < bookNodes.getLength(); i++) {
-                list.add(getDevice(bookNodes.item(i)));
+            for (int i = 0; i < deviceNodes.getLength(); i++) {
+                list.add(getDevice(deviceNodes.item(i)));
             }
         } catch (ParserConfigurationException ex) {
             ex.printStackTrace();
@@ -35,6 +34,7 @@ public class DOM {
             ex.printStackTrace();
         }
 
+        list.get(0).setType("DOM");
         return list;
     }
 

@@ -1,4 +1,4 @@
-package by.epam.tr.service.parser.sax;
+package by.epam.tr.dal.parser.sax;
 
 import by.epam.tr.device.Device;
 import org.xml.sax.InputSource;

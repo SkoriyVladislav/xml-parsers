@@ -1,4 +1,4 @@
-package by.epam.tr.service.parser.stax;
+package by.epam.tr.dal.parser.stax;
 
 import by.epam.tr.device.Device;
 
@@ -29,6 +29,7 @@ public class StAX {
             ex.printStackTrace();
         }
 
+        devices.get(0).setType("StAX");
         return devices;
     }
 

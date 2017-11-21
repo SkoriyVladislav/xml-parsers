@@ -6,7 +6,7 @@
         <name>Hard disk</name>
         <price>49.99</price>
         <origin>USA</origin>
-        <type>zaebis</type>
+        <type>Courier delivery</type>
         <critical>false</critical>
     </device>
 
@@ -14,7 +14,39 @@
         <name>Hard disk</name>
         <price>39.99</price>
         <origin>USA</origin>
-        <type>not zaebis</type>
+        <type>Pickup</type>
+        <critical>false</critical>
+    </device>
+
+    <device id="3">
+        <name>Hard disk</name>
+        <price>349.99</price>
+        <origin>USA</origin>
+        <type>Courier delivery</type>
+        <critical>false</critical>
+    </device>
+
+    <device id="4">
+        <name>Hard disk</name>
+        <price>439.99</price>
+        <origin>USA</origin>
+        <type>Pickup</type>
+        <critical>false</critical>
+    </device>
+
+    <device id="5">
+        <name>Hard disk</name>
+        <price>549.99</price>
+        <origin>USA</origin>
+        <type>Courier delivery</type>
+        <critical>false</critical>
+    </device>
+
+    <device id="6">
+        <name>Hard disk</name>
+        <price>639.99</price>
+        <origin>USA</origin>
+        <type>Pickup</type>
         <critical>false</critical>
     </device>
 </tc:devices>
