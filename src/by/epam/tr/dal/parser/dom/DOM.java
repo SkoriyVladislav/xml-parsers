@@ -33,8 +33,6 @@ public class DOM {
         } catch (org.xml.sax.SAXException ex) {
             ex.printStackTrace();
         }
-
-        list.get(0).setType("DOM");
         return list;
     }
 

@@ -17,17 +17,26 @@
   <br/>
       <form action="Controller" method="get">
             <input type="hidden" name="command" value="SAX" />
-            <input type="submit" value="SAX" />
+            <input type="submit" value="SAX" style="border: solid #000000;
+                   border-width: 1px 1px 1px 1px;
+                   border-radius: 7px 7px 7px 7px;
+                   background: #ffffff;"/>
       </form>
 
       <form action="Controller" method="get">
             <input type="hidden" name="command" value="StAX" />
-            <input type="submit" value="StAX" />
+            <input type="submit" value="StAX" style="border: solid #000000;
+                   border-width: 1px 1px 1px 1px;
+                   border-radius: 7px 7px 7px 7px;
+                   background: #ffffff;"/>
       </form>
 
       <form action="Controller" method="get">
-            <input type="hidden" name="command" value="DOM" />
-            <input type="submit" value="DOM" />
+            <input type="hidden" name="command" value="DOM"/>
+            <input type="submit" value="DOM" style="border: solid #000000;
+                   border-width: 1px 1px 1px 1px;
+                   border-radius: 7px 7px 7px 7px;
+                   background: #ffffff;"/>
       </form>
 
   </body>

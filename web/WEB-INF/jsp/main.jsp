@@ -33,6 +33,8 @@
                     <td>${device.critical}</td>
                 </tr>
             </c:forEach>
+
+            <h3 align="left">Parser: ${command}</h3>
         </table>
     </body>
 </html>

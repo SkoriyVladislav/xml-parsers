@@ -16,8 +16,6 @@ public class DeviceSaxHandler extends DefaultHandler {
     private StringBuilder text;
 
     List<Device> getDeviceList() {
-
-        list.get(0).setType("SAX");
         return list;
     }
 

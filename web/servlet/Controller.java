@@ -17,6 +17,7 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         String url = "devices.xml";
+        request.setAttribute("command", request.getParameter("command"));
         ServiceFactory.getInstance().getUserService().createListUser(request, response, url, request.getParameter("command"));
     }
 

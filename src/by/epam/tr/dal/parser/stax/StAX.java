@@ -28,8 +28,6 @@ public class StAX {
         } catch (XMLStreamException ex) {
             ex.printStackTrace();
         }
-
-        devices.get(0).setType("StAX");
         return devices;
     }
 
