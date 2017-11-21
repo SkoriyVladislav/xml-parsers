@@ -1,8 +1,9 @@
 package by.epam.tr.dao.impl;
 
 import by.epam.tr.dao.DeviceDAO;
-import by.epam.tr.service.sax.SAX;
-import by.epam.tr.service.stax.StAX;
+import by.epam.tr.service.parser.dom.DOM;
+import by.epam.tr.service.parser.sax.SAX;
+import by.epam.tr.service.parser.stax.StAX;
 import by.epam.tr.device.Device;
 
 import java.io.File;
@@ -35,6 +36,10 @@ public class DeviceDAOImpl implements DeviceDAO {
 
             case "StAX":
                 list = StAX.parse(file);
+                break;
+
+            case "DOM":
+                list = DOM.parse(file);
                 break;
 
         }

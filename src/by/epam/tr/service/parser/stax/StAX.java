@@ -1,4 +1,4 @@
-package by.epam.tr.service.stax;
+package by.epam.tr.service.parser.stax;
 
 import by.epam.tr.device.Device;
 

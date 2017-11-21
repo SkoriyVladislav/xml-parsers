@@ -1,4 +1,4 @@
-package by.epam.tr.service;
+package by.epam.tr.service.serviceFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

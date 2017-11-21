@@ -1,6 +1,6 @@
-package by.epam.tr.service.impl;
+package by.epam.tr.service.serviceFactory.impl;
 
-import by.epam.tr.service.DeviceListService;
+import by.epam.tr.service.serviceFactory.DeviceListService;
 import by.epam.tr.service.command.Action;
 import by.epam.tr.service.command.impl.SaxAction;
 import by.epam.tr.service.command.impl.StaxAction;

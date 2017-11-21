@@ -1,6 +1,6 @@
-package by.epam.tr.service;
+package by.epam.tr.service.serviceFactory;
 
-import by.epam.tr.service.impl.DeviceListServiceImpl;
+import by.epam.tr.service.serviceFactory.impl.DeviceListServiceImpl;
 
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();

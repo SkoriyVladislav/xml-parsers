@@ -1,6 +1,6 @@
 package servlet;
 
-import by.epam.tr.service.ServiceFactory;
+import by.epam.tr.service.serviceFactory.ServiceFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
