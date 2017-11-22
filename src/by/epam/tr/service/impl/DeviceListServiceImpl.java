@@ -21,7 +21,7 @@ public class DeviceListServiceImpl implements DeviceListService {
         List<Device> list = deviceDAO.createListUser(url, type);
         request.setAttribute("devices", list);
         try {
-            request.getRequestDispatcher("/WEB-INF/jsp/main.jsp?page=1").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         }
