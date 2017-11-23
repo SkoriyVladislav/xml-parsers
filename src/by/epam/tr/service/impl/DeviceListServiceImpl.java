@@ -19,7 +19,7 @@ public class DeviceListServiceImpl implements DeviceListService {
         DAOFactory factory = DAOFactory.getInstance();
         DeviceDAO deviceDAO = factory.getDeviceDAO();
         List<Device> list = deviceDAO.createListUser(url, type);
-        request.setAttribute("devices", list);
+        request.getSession().setAttribute("devices", list);
         try {
             request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);
         } catch (ServletException e) {
