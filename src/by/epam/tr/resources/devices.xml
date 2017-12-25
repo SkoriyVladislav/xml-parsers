@@ -6,7 +6,11 @@
         <name>Hard disk</name>
         <price>49.99</price>
         <origin>USA</origin>
-        <type>Courier delivery</type>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 
@@ -14,7 +18,11 @@
         <name>Hard disk</name>
         <price>39.99</price>
         <origin>USA</origin>
-        <type>Pickup</type>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 
@@ -22,7 +30,11 @@
         <name>Hard disk</name>
         <price>349.99</price>
         <origin>USA</origin>
-        <type>Courier delivery</type>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 
@@ -30,7 +42,11 @@
         <name>Hard disk</name>
         <price>439.99</price>
         <origin>USA</origin>
-        <type>Pickup</type>
+        <address>
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 
@@ -38,7 +54,11 @@
         <name>Hard disk</name>
         <price>549.99</price>
         <origin>USA</origin>
-        <type>Courier delivery</type>
+        <address >
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 
@@ -46,7 +66,11 @@
         <name>Hard disk</name>
         <price>639.99</price>
         <origin>USA</origin>
-        <type>Pickup</type>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
         <critical>false</critical>
     </device>
 </tc:devices>

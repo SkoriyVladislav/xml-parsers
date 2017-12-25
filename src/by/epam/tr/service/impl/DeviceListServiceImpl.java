@@ -13,12 +13,12 @@ import java.util.List;
 public class DeviceListServiceImpl implements DeviceListService {
 
     @Override
-    public void createListUser(HttpServletRequest request, HttpServletResponse response, String url, String type) throws IOException {
+    public void createDevicesList(HttpServletRequest request, HttpServletResponse response, String url, String type) throws IOException {
 
 
         DAOFactory factory = DAOFactory.getInstance();
         DeviceDAO deviceDAO = factory.getDeviceDAO();
-        List<Device> list = deviceDAO.createListUser(url, type);
+        List<Device> list = deviceDAO.createDevicesList(url, type);
         request.getSession().setAttribute("devices", list);
         try {
             request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);

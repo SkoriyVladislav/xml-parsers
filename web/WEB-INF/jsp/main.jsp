@@ -8,7 +8,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script type="text/javascript"><%@include file="/WEB-INF/js/javascript.js"%></script>
+<script address="text/javascript"><%@include file="/WEB-INF/js/javascript.js"%></script>
 <style>
     <%@include file="/WEB-INF/css/pageCSS.css"%>
 </style>
@@ -39,7 +39,7 @@
                             out.println("<td>" + device.getName()+ "</td>");
                             out.println("<td>" + device.getOrigin()+ "</td>");
                             out.println("<td>" + device.getPrice() + "</td>");
-                            out.println("<td>" + device.getType() + "</td>");
+                            out.println("<td>" + device.getAddress() + "</td>");
                             out.println("<td>" + device.getCritical() + "</td>"); %>
                 </tr>
                 <% } %>
@@ -47,7 +47,7 @@
 
         <div id="pageNavPosition"></div>
 
-        <script type="text/javascript">
+        <script address="text/javascript">
             var pager = new Pager('results', 2);
             pager.init();
             pager.showPageNav('pager', 'pageNavPosition');

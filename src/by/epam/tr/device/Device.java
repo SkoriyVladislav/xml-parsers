@@ -5,36 +5,20 @@ public class Device {
     private String Name;
     private double Price;
     private String Origin;
-    private String Type;
+    private Address address;
     private Boolean Critical;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public Device() {
 
-        Device device = (Device) o;
-
-        if (Id != device.Id) return false;
-        if (Price != device.Price) return false;
-        if (Name != null ? !Name.equals(device.Name) : device.Name != null) return false;
-        if (Origin != null ? !Origin.equals(device.Origin) : device.Origin != null) return false;
-        if (Type != null ? !Type.equals(device.Type) : device.Type != null) return false;
-        return Critical != null ? Critical.equals(device.Critical) : device.Critical == null;
     }
 
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = Id;
-        result = 31 * result + (Name != null ? Name.hashCode() : 0);
-        temp = Double.doubleToLongBits(Price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (Origin != null ? Origin.hashCode() : 0);
-        result = 31 * result + (Type != null ? Type.hashCode() : 0);
-        result = 31 * result + (Critical != null ? Critical.hashCode() : 0);
-        return result;
+    public Device(int id, String name, double price, String origin, Address address, Boolean critical) {
+        Id = id;
+        Name = name;
+        Price = price;
+        Origin = origin;
+        this.address = address;
+        Critical = critical;
     }
 
     public int getId() {
@@ -69,12 +53,12 @@ public class Device {
         Origin = origin;
     }
 
-    public String getType() {
-        return Type;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setType(String type) {
-        Type = type;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Boolean getCritical() {
@@ -92,8 +76,37 @@ public class Device {
                 ", Name='" + Name + '\'' +
                 ", Price=" + Price +
                 ", Origin='" + Origin + '\'' +
-                ", Type='" + Type + '\'' +
+                ", address='" + address + '\'' +
                 ", Critical=" + Critical +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Device device = (Device) o;
+
+        if (Id != device.Id) return false;
+        if (Double.compare(device.Price, Price) != 0) return false;
+        if (Name != null ? !Name.equals(device.Name) : device.Name != null) return false;
+        if (Origin != null ? !Origin.equals(device.Origin) : device.Origin != null) return false;
+        if (address != null ? !address.equals(device.address) : device.address != null) return false;
+        return Critical != null ? Critical.equals(device.Critical) : device.Critical == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = Id;
+        result = 31 * result + (Name != null ? Name.hashCode() : 0);
+        temp = Double.doubleToLongBits(Price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (Origin != null ? Origin.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (Critical != null ? Critical.hashCode() : 0);
+        return result;
     }
 }

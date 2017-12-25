@@ -1,6 +1,8 @@
 package by.epam.tr.dal.parser.stax;
 
+import by.epam.tr.device.Address;
 import by.epam.tr.device.Device;
+import by.epam.tr.resources.DeviceTagName;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -25,8 +27,10 @@ public class StAX {
 
         } catch (IOException ex) {
             ex.printStackTrace();
+            return null;
         } catch (XMLStreamException ex) {
             ex.printStackTrace();
+            return null;
         }
         return devices;
     }
@@ -41,12 +45,21 @@ public class StAX {
 
             switch (event) {
                 case XMLStreamConstants.START_ELEMENT:
-                    if ("device".equals(reader.getLocalName())) {
+                    if (DeviceTagName.DEVICE.getValue().equals(reader.getLocalName())) {
                         device = new Device();
                         device.setId(Integer.parseInt(reader.getAttributeValue(0)));
                     }
-                    if ("devices".equals(reader.getLocalName())) {
+                    if (DeviceTagName.DEVICES.getValue().equals(reader.getLocalName())) {
                         devices = new ArrayList<>();
+                    }
+                    if (DeviceTagName.ADDRESS.getValue().equals(reader.getLocalName())) {
+                        Address address = new Address();
+                        String type = reader.getAttributeValue((0));
+                        if (type == null) {
+                            type = DeviceTagName.DEFAULT_TYPE.getValue();
+                        }
+                        address.setType(type);
+                        device.setAddress(address);
                     }
                     break;
 
@@ -55,23 +68,29 @@ public class StAX {
                     break;
 
                 case XMLStreamConstants.END_ELEMENT:
-                    switch (reader.getLocalName()) {
-                        case "device":
+                    switch (DeviceTagName.valueOf(reader.getLocalName().toUpperCase())) {
+                        case DEVICE:
                             devices.add(device);
                             break;
-                        case "name":
+                        case NAME:
                             device.setName(elementName);
                             break;
-                        case "price":
+                        case PRICE:
                             device.setPrice(Double.parseDouble(elementName));
                             break;
-                        case "origin":
+                        case ORIGIN:
                             device.setOrigin(elementName);
                             break;
-                        case "type":
-                            device.setType(elementName);
+                        case COUNTRY:
+                            device.getAddress().setCountry(elementName);
                             break;
-                        case "critical":
+                        case CITY:
+                            device.getAddress().setCity(elementName);
+                            break;
+                        case STREET:
+                            device.getAddress().setStreet(elementName);
+                            break;
+                        case CRITICAL:
                             device.setCritical(Boolean.getBoolean(elementName));
                             break;
                     }

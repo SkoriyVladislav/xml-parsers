@@ -1,6 +1,8 @@
 package by.epam.tr.dal.parser.dom;
 
+import by.epam.tr.device.Address;
 import by.epam.tr.device.Device;
+import by.epam.tr.resources.DeviceTagName;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -21,30 +23,37 @@ public class DOM {
         try {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file);
-            NodeList deviceNodes = doc.getElementsByTagName("device");
+            NodeList deviceNodes = doc.getElementsByTagName(DeviceTagName.DEVICE.getValue());
             list = new ArrayList<>();
             for (int i = 0; i < deviceNodes.getLength(); i++) {
                 list.add(getDevice(deviceNodes.item(i)));
             }
         } catch (ParserConfigurationException ex) {
             ex.printStackTrace();
+            return null;
         } catch (IOException ex) {
             ex.printStackTrace();
+            return null;
         } catch (org.xml.sax.SAXException ex) {
             ex.printStackTrace();
+            return null;
         }
         return list;
     }
 
     private static Device getDevice(Node node) {
         Device device = new Device();
+        device.setAddress(new Address());
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
-            device.setName(getTagValue("name", element));
-            device.setType(getTagValue("type", element));
-            device.setPrice(Double.parseDouble(getTagValue("price", element)));
-            device.setOrigin(getTagValue("origin", element));
-            device.setCritical(Boolean.getBoolean(getTagValue("critical", element)));
+            device.setName(getTagValue(DeviceTagName.NAME.getValue(), element));
+            device.getAddress().setCountry(getTagValue(DeviceTagName.COUNTRY.getValue(), element));
+            device.getAddress().setCity(getTagValue(DeviceTagName.CITY.getValue(), element));
+            device.getAddress().setStreet(getTagValue(DeviceTagName.STREET.getValue(), element));
+            device.getAddress().setType(element.getAttribute(DeviceTagName.TYPE.getValue()));
+            device.setPrice(Double.parseDouble(getTagValue(DeviceTagName.PRICE.getValue(), element)));
+            device.setOrigin(getTagValue(DeviceTagName.ORIGIN.getValue(), element));
+            device.setCritical(Boolean.getBoolean(getTagValue(DeviceTagName.CRITICAL.getValue(), element)));
         }
         return device;
     }

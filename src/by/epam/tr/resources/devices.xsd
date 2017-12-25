@@ -18,9 +18,26 @@
             <element name="name" type="string"/>
             <element name="price" type="double"/>
             <element name="origin" type="string"/>
-            <element name="type" type="string"/>
+            <element name="address" type="tns:address"/>
             <element name="critical" type="boolean"/>
         </sequence>
         <attribute name="id" type="int" use="required"/>
+    </complexType>
+
+    <complexType name="address">
+        <sequence>
+            <element name="country" type="string"/>
+            <element name="city" type="string"/>
+            <element name="street" type="string"/>
+        </sequence>
+
+        <attribute name="type" use="optional" default="home">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="home"/>
+                    <enumeration value="work"/>
+                </restriction>
+            </simpleType>
+        </attribute>
     </complexType>
 </schema>

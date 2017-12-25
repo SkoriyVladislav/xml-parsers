@@ -5,5 +5,5 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public interface DeviceListService {
-    void createListUser(HttpServletRequest request, HttpServletResponse response, String url, String type) throws IOException;
+    void createDevicesList(HttpServletRequest request, HttpServletResponse response, String url, String type) throws IOException;
 }

@@ -1,5 +1,6 @@
 package by.epam.tr.dal.parser.sax;
 
+import by.epam.tr.device.Address;
 import by.epam.tr.device.Device;
 import by.epam.tr.resources.DeviceTagName;
 import org.xml.sax.Attributes;
@@ -21,9 +22,18 @@ public class DeviceSaxHandler extends DefaultHandler {
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         text = new StringBuilder();
-        if (qName == "device") {
+        if (qName.equals(DeviceTagName.DEVICE.getValue())) {
             device = new Device();
-            device.setId(Integer.parseInt(attributes.getValue("id")));
+            device.setId(Integer.parseInt(attributes.getValue(DeviceTagName.ID.getValue())));
+        }
+        if (qName.equals(DeviceTagName.ADDRESS.getValue())) {
+            Address address = new Address();
+            String type = attributes.getValue(DeviceTagName.TYPE.getValue());
+            if (type == null) {
+                type = DeviceTagName.DEFAULT_TYPE.getValue();
+            }
+            address.setType(type);
+            device.setAddress(address);
         }
     }
 
@@ -37,8 +47,14 @@ public class DeviceSaxHandler extends DefaultHandler {
             case NAME:
                 device.setName(text.toString());
                 break;
-            case TYPE:
-                device.setType(text.toString());
+            case COUNTRY:
+                device.getAddress().setCountry(text.toString());
+                break;
+            case CITY:
+                device.getAddress().setCity(text.toString());
+                break;
+            case STREET:
+                device.getAddress().setStreet(text.toString());
                 break;
             case PRICE:
                 device.setPrice(Double.parseDouble(text.toString()));

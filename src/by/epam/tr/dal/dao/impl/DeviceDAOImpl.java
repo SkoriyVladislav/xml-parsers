@@ -16,7 +16,7 @@ import java.util.List;
 public class DeviceDAOImpl implements DeviceDAO {
 
     @Override
-    public List<Device> createListUser(String url, String type) {
+    public List<Device> createDevicesList(String url, String type) {
         List<Device> list = new ArrayList<>();
 
         URL fileURL = DeviceDAOImpl.class.getClassLoader().getResource(url);
@@ -25,6 +25,7 @@ public class DeviceDAOImpl implements DeviceDAO {
             fileURI = fileURL.toURI();
         } catch (URISyntaxException ex) {
             ex.printStackTrace();
+            return null;
         }
         File file = new File(fileURI);
 
