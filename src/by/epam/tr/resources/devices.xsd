@@ -24,11 +24,10 @@
         <attribute name="id" type="int" use="required"/>
     </complexType>
 
-    <complexType name="address">
+    <complexType name="address_not_full">
         <sequence>
             <element name="country" type="string"/>
             <element name="city" type="string"/>
-            <element name="street" type="string"/>
         </sequence>
 
         <attribute name="type" use="optional" default="home">
@@ -39,5 +38,15 @@
                 </restriction>
             </simpleType>
         </attribute>
+    </complexType>
+
+    <complexType name="address">
+        <complexContent>
+            <extension base="tns:address_not_full">
+                <sequence>
+                    <element name="street" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
     </complexType>
 </schema>

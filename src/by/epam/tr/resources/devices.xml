@@ -73,4 +73,148 @@
         </address>
         <critical>false</critical>
     </device>
+
+    <device id="7">
+        <name>Hard disk</name>
+        <price>49.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="8">
+        <name>Hard disk</name>
+        <price>39.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="9">
+        <name>Hard disk</name>
+        <price>349.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="10">
+        <name>Hard disk</name>
+        <price>439.99</price>
+        <origin>USA</origin>
+        <address>
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="11">
+        <name>Hard disk</name>
+        <price>549.99</price>
+        <origin>USA</origin>
+        <address >
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="12">
+        <name>Hard disk</name>
+        <price>639.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="13">
+        <name>Hard disk</name>
+        <price>49.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="14">
+        <name>Hard disk</name>
+        <price>39.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="15">
+        <name>Hard disk</name>
+        <price>349.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="16">
+        <name>Hard disk</name>
+        <price>439.99</price>
+        <origin>USA</origin>
+        <address>
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="17">
+        <name>Hard disk</name>
+        <price>549.99</price>
+        <origin>USA</origin>
+        <address >
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
+
+    <device id="18">
+        <name>Hard disk</name>
+        <price>639.99</price>
+        <origin>USA</origin>
+        <address type="home">
+            <country>USA</country>
+            <city>New York</city>
+            <street>Lenina</street>
+        </address>
+        <critical>false</critical>
+    </device>
 </tc:devices>

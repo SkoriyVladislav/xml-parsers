@@ -20,6 +20,7 @@ public class DeviceSaxHandler extends DefaultHandler {
         return list;
     }
 
+    @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         text = new StringBuilder();
         if (qName.equals(DeviceTagName.DEVICE.getValue())) {
@@ -37,10 +38,12 @@ public class DeviceSaxHandler extends DefaultHandler {
         }
     }
 
+    @Override
     public void characters(char[] buffer, int start, int length) {
         text.append(buffer, start, length);
     }
 
+    @Override
     public void endElement(String uri, String localName, String qName) {
         DeviceTagName tagName = DeviceTagName.valueOf(qName.toUpperCase().replace(":","_"));
         switch (tagName) {
